@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:\\\\Users\\\\zheny\\\\Desktop\\\\diplom\\\\dp-recommender-engine\\\\app\" \"c:\\\\Users\\\\zheny\\\\Desktop\\\\diplom\\\\dp-recommender-engine\\\\data\" \"c:\\\\Users\\\\zheny\\\\Desktop\\\\diplom\\\\dp-recommender-engine\\\\scripts\")",
+      "Bash(pip --version)",
+      "Bash(py --version)",
+      "Bash(py -m venv .venv)",
+      "Bash(./.venv/Scripts/python.exe -m pip install --quiet --disable-pip-version-check -r requirements.txt)",
+      "Bash(./.venv/Scripts/python.exe -m pip install --quiet --disable-pip-version-check --only-binary=:all: pandas numpy scikit-learn scipy)",
+      "Bash(./.venv/Scripts/python.exe -m pip list --format=freeze)",
+      "Bash(./.venv/Scripts/python.exe -m pip install --quiet --disable-pip-version-check fastapi \"uvicorn[standard]\" python-dotenv joblib pydantic-settings)",
+      "Bash(./.venv/Scripts/python.exe scripts/make_fake_dataset.py)",
+      "Bash(cp .env.example .env)",
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "Bash(.venv/Scripts/python.exe -m pip list --format=freeze)",
+      "Bash(time .venv/Scripts/python.exe -c ' *)",
+      "Bash(awk -F= '/SPOTIFY_CLIENT_ID|SPOTIFY_CLIENT_SECRET/{print $1\"=\"\\(length\\($2\\)>0?\"<set, \"length\\($2\\)\" chars>\":\"<EMPTY>\"\\)}' .env)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -m 5 https://accounts.spotify.com/api/token -X POST -d \"grant_type=client_credentials\")",
+      "Bash(awk -F= '/^SPOTIFY_CLIENT_ID=/{print $2}' .env)",
+      "Bash(awk -F= '/^SPOTIFY_CLIENT_SECRET=/{print $2}' .env)",
+      "Bash(curl -s -w '\\\\nHTTP_STATUS:%{http_code}\\\\n' -X POST https://accounts.spotify.com/api/token -H 'Content-Type: application/x-www-form-urlencoded' -d 'grant_type=client_credentials&client_id=__TRACKED_VAR__&client_secret=__TRACKED_VAR__')",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" http://localhost:9999/api/v1/track/root)",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" http://localhost:9999/api/v1/health)",
+      "Bash(curl -s -o /dev/null -w \"HTTP_STATUS:%{http_code}\\\\n\" -m 8 \"https://www.afrocharts.com/images/song_cover.png\")",
+      "Bash(curl -sI -m 8 \"https://www.afrocharts.com/images/song_cover.png\")",
+      "Bash(./node_modules/.bin/tsc.cmd --noEmit --target es2019 --module commonjs --esModuleInterop --skipLibCheck src/utils/getSpotifyTrackInfo.ts src/database/active-records/track.record.ts src/database/active-records/playlist.record.ts src/database/active-records/user.record.ts src/controllers/tracks.controller.ts)",
+      "Bash(./node_modules/.bin/tsc.cmd --noEmit -p tsconfig.json)",
+      "Bash(curl -s \"https://itunes.apple.com/search?term=Miley%20Cyrus%20Flowers&media=music&entity=song&limit=1\")",
+      "Bash(curl -s http://localhost:9999/api/v1/track/root)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\zheny\\Desktop\\diplom\\dp-recommender-engine"
+    ]
+  }
+}

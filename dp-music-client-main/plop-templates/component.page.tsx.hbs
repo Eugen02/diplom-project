@@ -1,0 +1,19 @@
+import React, { ReactElement } from "react";
+
+import { Page } from "../../components/shared-components/Page/Page";
+
+import { {{pascalCase name}}StyledWrapper } from "./{{pascalCase name}}.styled";
+
+interface {{pascalCase name}}PageProps {}
+
+export const {{pascalCase name}}Page = (props: {{pascalCase name}}PageProps): ReactElement => {
+  const {} = props;
+
+  return (
+    <Page>
+        <{{pascalCase name}}StyledWrapper>
+        {{pascalCase name}}
+        </{{pascalCase name}}StyledWrapper>
+    </Page>
+  );
+};

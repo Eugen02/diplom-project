@@ -1,0 +1,19 @@
+import { model, Schema, Model, Document } from "mongoose";
+import { ModelsNamesEnum } from "../../types/enums/ModelsNames.enum";
+import { addVirtualsToSchema } from "../../utils/addVirtualsToSchema";
+
+interface {{pascalCase modelName}}DocInterface extends Document {}
+
+interface {{pascalCase modelName}}ModelInterface extends Model<{{pascalCase modelName}}DocInterface> {}
+
+const {{pascalCase modelName}}Schema: Schema = new Schema(
+  {},
+  { timestamps: true }
+);
+
+addVirtualsToSchema({{pascalCase modelName}}Schema);
+
+export const {{pascalCase modelName}}Model = model<{{pascalCase modelName}}DocInterface, {{pascalCase modelName}}ModelInterface>(
+  ModelsNamesEnum.{{constantCase modelName}},
+  {{pascalCase modelName}}Schema
+);

@@ -1,0 +1,7 @@
+import { Request, Response } from "express";
+
+export class {{pascalCase name}}Controller {
+  async get{{pascalCase name}}(request: Request, response: Response): Promise<void> {
+    response.status(200).json({ ok: true });
+  }
+}

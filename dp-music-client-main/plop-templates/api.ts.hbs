@@ -1,0 +1,13 @@
+import { httpClient } from "../httpClient/HttpClient";
+
+export class {{pascalCase name}}Api {
+  private {{toUpperCase name}}_ENDPOINT = "/";
+
+  get{{pascalCase name}} = async (): Promise<any> => {
+    const data = await httpClient.get(`${this.{{toUpperCase name}}_ENDPOINT}/all`);
+
+    return data;
+  };
+}
+
+export const {{camelCase name}}Api = new {{pascalCase name}}Api();

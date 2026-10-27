@@ -1,0 +1,15 @@
+import { {{pascalCase modelName}}Model } from "../models/{{toKebabCase modelName}}.model";
+
+interface {{pascalCase modelName}}RecordInterface {
+  get{{pascalCase modelName}}: () => Promise<any>;
+}
+
+export class {{pascalCase modelName}}Record implements {{pascalCase modelName}}RecordInterface {
+  async get{{pascalCase modelName}}(): Promise<any> {
+    const {{camelCase modelName}} = await {{pascalCase modelName}}Model.find({});
+
+    return {{camelCase modelName}};
+  }
+}
+
+export const {{camelCase modelName}}Record = new {{pascalCase modelName}}Record();
